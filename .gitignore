@@ -1,3 +1,5 @@
 .env
+prod.env
 /db/
 /images/
+/install/secrets/

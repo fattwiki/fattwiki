@@ -2,3 +2,7 @@
 	path = Vector
 	url = git@github.com:fattwiki/Vector.git
 	branch = fattwiki
+[submodule "mediawiki-extensions-VisualEditor"]
+	path = mediawiki-extensions-VisualEditor
+	url = git@github.com:fattwiki/mediawiki-extensions-VisualEditor.git
+	branch = fattwiki

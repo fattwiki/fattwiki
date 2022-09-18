@@ -9,6 +9,7 @@ services:
       - ./images:/var/www/html/wiki/images
       - ./LocalSettings.php:/var/www/html/wiki/LocalSettings.php
       - ./Vector:/var/www/html/wiki/skins/Vector
+      - ./mediawiki-extensions-VisualEditor:/var/www/html/wiki/extensions/VisualEditor
     env_file:
       - .env
     container_name: fattwiki

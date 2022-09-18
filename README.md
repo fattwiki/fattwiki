@@ -9,6 +9,9 @@ git clone https://github.com/fattwiki/fattwiki.git
 cd fattwiki
 git submodule init
 git submodule update
+cd mediawiki-extensions-VisualEditor
+git submodule init
+git submodule update
 ```
 Create a file named ```.env``` in the project root:
 ```
