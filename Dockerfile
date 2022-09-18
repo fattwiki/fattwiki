@@ -4,7 +4,7 @@ WORKDIR /opt
 RUN apt-get update; apt-get install unzip
 
 # Change the wiki's root path (it just seems to work better in a subdirectory of /var/www/html)
-RUN cd /var/www; mv html wiki; mkdir html; mv wiki html/wiki 
+RUN cd /var/www; mv html wiki; mkdir html; mv wiki html/wiki
 ENV WIKI_PATH /var/www/html/wiki
 
 COPY ./install/* /opt/
@@ -18,7 +18,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"; \
     mv composer.phar /usr/local/bin/composer
 
 # Install extensions
-RUN ./install.sh
+RUN bash install.sh
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY favicon.ico $WIKI_PATH/favicon.ico
