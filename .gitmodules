@@ -1,3 +1,4 @@
 [submodule "Vector"]
 	path = Vector
-	url = https://github.com/fattwiki/Vector.git
+	url = git@github.com:fattwiki/Vector.git
+	branch = fattwiki
