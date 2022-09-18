@@ -1,0 +1,9 @@
+TemplateStyles https://github.com/wikimedia/mediawiki-extensions-TemplateStyles/archive/refs/heads/REL1_38.zip
+DeleteBatch https://github.com/wikimedia/mediawiki-extensions-DeleteBatch/archive/refs/heads/REL1_38.zip
+PortableInfobox https://github.com/Universal-Omega/PortableInfobox/archive/refs/heads/master.zip
+MassEditRegex https://github.com/wikimedia/mediawiki-extensions-MassEditRegex/archive/refs/heads/REL1_38.zip
+DynamicPageList3 https://github.com/Universal-Omega/DynamicPageList3/archive/refs/heads/REL1_38.zip
+SearchExtraNS https://github.com/wikimedia/mediawiki-extensions-SearchExtraNS/archive/refs/heads/REL1_38.zip
+TitleKey https://github.com/wikimedia/mediawiki-extensions-TitleKey/archive/refs/heads/REL1_38.zip
+ConfirmEdit https://github.com/wikimedia/mediawiki-extensions-ConfirmEdit/archive/refs/heads/master.zip
+CommonsMetadata https://github.com/wikimedia/mediawiki-extensions-CommonsMetadata/archive/refs/heads/REL1_38.zip

@@ -1,0 +1,21 @@
+services:
+  wiki:
+    image: fattwiki:latest
+    ports:
+      - 80:80
+    links:
+      - database
+    volumes:
+      - ./images:/var/www/html/wiki/images
+      - ./LocalSettings.php:/var/www/html/wiki/LocalSettings.php
+      - ./Vector:/var/www/html/wiki/skins/Vector
+    env_file:
+      - .env
+  database:
+    ports: 
+      - 3306:3306
+    image: mariadb:10.3
+    env_file:
+      - .env
+    volumes:
+      - ./db:/var/lib/mysql
