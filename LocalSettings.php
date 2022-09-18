@@ -51,9 +51,9 @@ $wgPasswordSender = getenv('WIKI_EMAIL');
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
-$wgEmailAuthentication = true;
+$wgEmailAuthentication = getenv('WIKI_EMAIL_AUTHENTICATION');
 
-$wgEmailConfirmToEdit = true;
+$wgEmailConfirmToEdit = getenv('WIKI_EMAIL_CONFIRMTOEDIT');
 
 ## Database settings
 $wgDBtype = "mysql";

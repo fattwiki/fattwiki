@@ -15,18 +15,20 @@ Create a file named ```.env``` in the project root:
 WIKI_SERVER = http://localhost
 APACHE_SERVER_NAME = localhost
 
-MARIADB_SERVER = database 
+MARIADB_SERVER = database
 MARIADB_DATABASE = fattwiki
 MARIADB_USER  = admin
 # Passwords can be whatever you want
-MARIADB_PASSWORD = 
-MARIADB_ROOT_PASSWORD = 
+MARIADB_PASSWORD =
+MARIADB_ROOT_PASSWORD =
 
 # These keys can also be whatever strings you want
-WIKI_SECRET_KEY = 
+WIKI_SECRET_KEY =
 WIKI_UPGRADE_KEY =
 
 WIKI_EMAIL = test@email.com
+WIKI_EMAIL_AUTHENTICATION = false
+WIKI_EMAIL_CONFIRMTOEDIT = false
 ```
 
 ## Setup
@@ -34,7 +36,7 @@ Make sure you're executing from the project root.
 
 Build the Docker image:
 ```
-docker image build -t fattwiki . 
+docker image build -t fattwiki .
 ```
 Make the images and db folders to mount into the Docker container:
 ```
@@ -48,7 +50,7 @@ docker-compose up
 
 Initialize the database:
 ```
-mysql --port=3306 -u $DB_USER -p $DB_PASS $DB_NAME < database_dump.sql
+docker exec -i fattwiki-db sh -c 'exec mysql -uroot -p"$MARIADB_ROOT_PASSWORD" fattwiki' < database_dump.sql
 ```
 
 Copy images into the /images directory.
@@ -71,3 +73,7 @@ To install a new extension on your Dockerized wiki:
 ## Goals
 - Update skin (current skin is in [fattwiki/Vector](https://github.com/fattwiki/Vector))
 - Modify VisualEditor?
+
+## See also
+- [MariaDB Dockerfile documentation](https://hub.docker.com/_/mariadb)
+- [Mediawiki Dockerfile documentation](https://hub.docker.com/_/mediawiki)
