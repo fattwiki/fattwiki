@@ -6,6 +6,7 @@ The current setup of this repository is that it holds configuration files and ot
 Clone the repository and initialize the submodules:
 ```
 git clone https://github.com/fattwiki/fattwiki.git
+cd fattwiki
 git submodule init
 git submodule update
 ```
@@ -29,6 +30,7 @@ WIKI_EMAIL = test@email.com
 ```
 
 ## Setup
+Make sure you're executing from the project root.
 
 Build the Docker image:
 ```
@@ -67,9 +69,5 @@ To install a new extension on your Dockerized wiki:
 7. Re-execute docker-compose up
 
 ## Goals
-
-Currently, the only Mediawiki code I've edited is the skin. I've made very minimal edits and the majority of the CSS for the wiki can be seen at [Mediawiki:Common.css](https://fatt.wiki/view/MediaWiki:Common.css).
-
- My goal is to move the skin-related CSS into the skin itself, and to make the skin more maintainable instead of just a slapdash edit of Mediawiki's default skin ([Vector 2022](https://www.mediawiki.org/wiki/Skin:Vector/2022)).
-
-
+- Update skin (current skin is in [fattwiki/Vector](https://github.com/fattwiki/Vector))
+- Modify VisualEditor?
