@@ -7,7 +7,7 @@ RUN apt-get update; apt-get install unzip
 RUN cd /var/www; mv html wiki; mkdir html; mv wiki html/wiki 
 ENV WIKI_PATH /var/www/html/wiki
 
-COPY ./install/* /opt
+COPY ./install/* /opt/
 
 # Install Composer, we'll need it for extensions
 # See https://getcomposer.org/download/
@@ -20,8 +20,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"; \
 # Install extensions
 RUN ./install.sh
 
-# Copy configuration files
-COPY 000-default.dev.conf /etc/apache2/sites-available/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY favicon.ico $WIKI_PATH/favicon.ico
 
 CMD apache2-foreground
