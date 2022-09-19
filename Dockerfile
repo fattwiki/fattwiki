@@ -2,6 +2,7 @@ FROM mediawiki:1.38
 WORKDIR /opt
 
 RUN apt-get update; apt-get install unzip
+RUN a2enmod ssl
 
 # Change the wiki's root path (it just seems to work better in a subdirectory of /var/www/html)
 RUN cd /var/www; mv html wiki; mkdir html; mv wiki html/wiki
