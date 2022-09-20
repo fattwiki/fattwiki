@@ -39,6 +39,7 @@ Make sure you're executing from the project root.
 
 Build the Docker image:
 ```
+cp 000-default.dev.conf 000-default.conf
 docker image build -t fattwiki .
 ```
 Make the images and db folders to mount into the Docker container:

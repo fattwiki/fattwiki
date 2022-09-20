@@ -23,5 +23,6 @@ RUN bash install.sh
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY favicon.ico $WIKI_PATH/favicon.ico
+COPY php.ini /usr/local/etc/php/php.ini
 
 CMD apache2-foreground
