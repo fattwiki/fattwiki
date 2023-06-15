@@ -3,3 +3,6 @@ prod.env
 /db/
 /images/
 /prod/
+/node_modules/
+/Vector/
+/mediawiki-extensions-VisualEditor/
