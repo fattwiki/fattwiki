@@ -15,8 +15,6 @@ services:
     container_name: fattwiki
 
   database:
-    ports:
-      - 3306:3306
     image: mariadb:10.3
     env_file:
       - .env

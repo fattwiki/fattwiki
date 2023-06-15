@@ -7,3 +7,5 @@ services:
       - ./prod/deploy/ssl/server.key:/etc/ssl/server.key
       - ./prod/deploy/ssl/fatt_wiki.ca-bundle:/etc/ssl/certs/fatt_wiki.ca-bundle
       - ./prod/deploy/ssl/.well-known:/var/www/html/.well-known
+  database:
+    restart: always
