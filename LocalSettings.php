@@ -53,7 +53,8 @@ $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = getenv('WIKI_EMAIL_AUTHENTICATION');
 
-$wgEmailConfirmToEdit = getenv('WIKI_EMAIL_CONFIRMTOEDIT');
+#$wgEmailConfirmToEdit = getenv('WIKI_EMAIL_CONFIRMTOEDIT');
+$wgEmailConfirmToEdit = true;
 
 ## Database settings
 $wgDBtype = "mysql";
