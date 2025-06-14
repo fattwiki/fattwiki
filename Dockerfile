@@ -1,8 +1,11 @@
 FROM mediawiki:1.38
 WORKDIR /opt
 
-RUN apt-get update; apt-get install unzip
+RUN apt-get update; apt-get install unzip wget
 RUN a2enmod ssl
+
+# Install evasive to help with bot traffic
+RUN wget https://github.com/jvdmr/mod_evasive/releases/download/2.2.0/libapache2-mod-evasive.deb; dpkg -i libapache2-mod-evasive.deb
 
 # Change the wiki's root path (it just seems to work better in a subdirectory of /var/www/html)
 RUN cd /var/www; mv html wiki; mkdir html; mv wiki html/wiki
@@ -24,5 +27,6 @@ RUN bash install.sh
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY favicon.ico $WIKI_PATH/favicon.ico
 COPY php.ini /usr/local/etc/php/php.ini
+COPY robots.txt /var/www/html/robots.txt
 
 CMD apache2-foreground
